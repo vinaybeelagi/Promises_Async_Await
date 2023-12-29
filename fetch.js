@@ -23,4 +23,9 @@ let urls = [
     reponse => console.log(`${reponse.url} : ${reponse.status}`)
   ));
 
-  
+ 
+// promise.all example-2
+  let p1 = new Promise(resolve => setTimeout(()=> resolve(1),3000))
+  let p2 = new Promise(resolve => setTimeout(()=> resolve(2),2000))
+  let p3 = new Promise(resolve => setTimeout(()=> resolve(3),1000))
+  Promise.all([p1,p2,p3]).then(i => console.log(i));
