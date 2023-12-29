@@ -27,3 +27,12 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve,ms));
 }
 delay(3000).then(() =>console.log('run after 3sec'))
+
+//task-Promise: then versus catch Are these code fragments equal? 
+//1.
+promise.then(f1).catch(f2)
+//2
+promise.then(f1, f2);
+//answer is: no, they are not equal
+
+
