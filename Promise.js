@@ -21,3 +21,9 @@ let promise = new Promise(function(resolve, reject) {
   
   promise.then(alert);
   //The output is: 1.The second call to resolve is ignored, because only the first call of reject/resolve is taken into account. Further calls are ignored.
+
+//   task- Delay with a promise
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve,ms));
+}
+delay(3000).then(() =>console.log('run after 3sec'))
