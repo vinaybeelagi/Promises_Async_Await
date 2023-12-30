@@ -29,3 +29,14 @@ let urls = [
   let p2 = new Promise(resolve => setTimeout(()=> resolve(2),2000))
   let p3 = new Promise(resolve => setTimeout(()=> resolve(3),1000))
   Promise.all([p1,p2,p3]).then(i => console.log(i));
+
+  // Chaining promises
+  const fetchPromise = fetch(
+    "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
+  );
+  
+  fetchPromise
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data[0].name);
+    });
