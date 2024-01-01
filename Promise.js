@@ -35,4 +35,16 @@ promise.then(f1).catch(f2)
 promise.then(f1, f2);
 //answer is: no, they are not equal
 
+//chaining promise example
+const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("foo");
+    }, 300);
+  });
+  
+  myPromise
+    .then(handleFulfilledA, handleRejectedA)
+    .then(handleFulfilledB, handleRejectedB)
+    .then(handleFulfilledC, handleRejectedC)
+    
 
